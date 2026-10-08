@@ -29,3 +29,12 @@ xcrun simctl launch booted dev.brentvatne.headerrepro -screen inline -scrolled 0
 
 - Inline: the bar is opaque white with a hairline in both states, and content never scrolls under it. A default `UINavigationController` bar is clear at the scroll edge.
 - Large title: clear at rest; when scrolled the title collapses and content scrolls under the bar with the scroll edge effect. This one behaves as expected.
+
+## Evidence for the react-native-screens fix
+
+`pr-evidence/rns-scroll-edge/` holds before/after screenshots (top of the screen, iPhone 18 Pro Max, iOS 27.0) for a react-native-screens change that leaves `scrollEdgeAppearance` to UIKit when no background color is set. Two extra screens exercise it:
+
+- **Inline, no background color** (`app/inline-system.tsx`): passes no `backgroundColor` to react-native-screens through `unstable_nativeProps.headerConfig`, since expo-router (like react-navigation) otherwise always passes `colors.card`.
+- **Inline, explicit color** (`app/inline-color.tsx`): `headerStyle.backgroundColor` set, to check that explicit options keep their current behavior.
+
+Open them with `-screen inline-system` or `-screen inline-color`.
