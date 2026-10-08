@@ -43,3 +43,11 @@ Open them with `-screen inline-system` or `-screen inline-color`.
 
 `pr-evidence/expo-router-header-background/` holds before/after crops (top of the screen, iPhone 18 Pro Max, iOS 27.0) for an expo-router change that stops sending the default theme's `card` color as the iOS header background, combined with the react-native-screens change above. Screens: `inline` (no header options), `inline-color` (explicit `headerStyle.backgroundColor`) and `large`, each at rest and scrolled.
 
+
+## Evidence for the expo-router change (themes and dark mode)
+
+`pr-evidence/expo-router-header-background/v2/` has before/after crops for the expo-router change that stops sending the built-in theme's `card` color on iOS (after = that change plus the react-native-screens fix). Launch arguments used:
+
+- `-theme default|dark` wraps the app in a `ThemeProvider` (without it, expo-router's default theme applies).
+- The device appearance was switched with `xcrun simctl ui <udid> appearance dark|light`.
+- `-screen inline-dark-content` opens an inline screen with `contentStyle: { backgroundColor: '#000' }` under the default theme.
