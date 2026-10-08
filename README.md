@@ -38,3 +38,8 @@ xcrun simctl launch booted dev.brentvatne.headerrepro -screen inline -scrolled 0
 - **Inline, explicit color** (`app/inline-color.tsx`): `headerStyle.backgroundColor` set, to check that explicit options keep their current behavior.
 
 Open them with `-screen inline-system` or `-screen inline-color`.
+
+## Evidence for the expo-router fix
+
+`pr-evidence/expo-router-header-background/` holds before/after crops (top of the screen, iPhone 18 Pro Max, iOS 27.0) for an expo-router change that stops sending the default theme's `card` color as the iOS header background, combined with the react-native-screens change above. Screens: `inline` (no header options), `inline-color` (explicit `headerStyle.backgroundColor`) and `large`, each at rest and scrolled.
+
