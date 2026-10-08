@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "Header Repro",
+    "slug": "expo-router-header-background-repro",
+    "scheme": "headerrepro",
+    "ios": { "bundleIdentifier": "dev.brentvatne.headerrepro" },
+    "plugins": ["expo-router"]
+  }
+}
