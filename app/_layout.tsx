@@ -28,6 +28,25 @@ export default function Layout() {
       {/* Default theme with a dark screen background: the clear bar shows this background behind the theme's title color. */}
       <Stack.Screen name="inline-dark-content" options={{ title: 'Dark content', contentStyle: { backgroundColor: '#000' } }} />
       <Stack.Screen name="inline-color" options={{ title: 'Explicit color', headerStyle: { backgroundColor: '#FFE08A' } }} />
+      {/* No background color plus a custom title color and font: the title must keep its style at the scroll edge. */}
+      <Stack.Screen
+        name="inline-title-attrs"
+        options={{
+          title: 'Styled title',
+          headerTitleStyle: { color: '#FF00FF', fontFamily: 'Georgia', fontSize: 20 },
+          unstable_nativeProps: { headerConfig: { backgroundColor: undefined } },
+        }}
+      />
+      <Stack.Screen
+        name="large-title-attrs"
+        options={{
+          title: 'Styled large',
+          headerLargeTitle: true,
+          headerTitleStyle: { color: '#FF00FF' },
+          headerLargeTitleStyle: { color: '#FF00FF', fontFamily: 'Georgia' },
+          unstable_nativeProps: { headerConfig: { backgroundColor: undefined } },
+        }}
+      />
     </Stack>
     </Themed>
   );

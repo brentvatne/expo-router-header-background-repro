@@ -2,7 +2,7 @@ import { Link, router } from 'expo-router';
 import { useEffect } from 'react';
 import { Settings, StyleSheet, View } from 'react-native';
 
-const SCREENS = ['inline', 'large', 'inline-system', 'inline-color', 'inline-dark-content'];
+const SCREENS = ['inline', 'large', 'inline-system', 'inline-color', 'inline-dark-content', 'inline-title-attrs', 'large-title-attrs'];
 
 export default function Index() {
   // For screenshots without touch input: `-screen <name>` (launch argument) opens that screen.
